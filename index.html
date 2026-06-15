@@ -224,7 +224,7 @@ header.site.scrolled{border-color:var(--line);box-shadow:0 2px 18px rgba(0,0,0,.
 .acc.open .acc-icon{background:var(--or-grad);transform:rotate(45deg);}
 .acc.open .acc-icon svg{color:#fff !important;}
 .acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-.acc-body .inner{padding:6px 20px 22px 56px;color:var(--ink-soft);font-size:14.5px;}
+.acc-body .inner{padding:16px 20px 22px 56px;color:var(--ink-soft);font-size:14.5px;}
 .acc-body .inner ul{margin:0;padding-left:18px;}
 .acc-body .inner li{margin-bottom:6px;}
 .acc-body .inner p+p{margin-top:10px;}
@@ -242,15 +242,16 @@ header.site.scrolled{border-color:var(--line);box-shadow:0 2px 18px rgba(0,0,0,.
 
 /* ── CONTACT ─────────────────────── */
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-.contact-info h2{font-size:clamp(28px,3vw,42px);margin-top:16px;}
-.contact-info .lead{margin-top:20px;font-size:17px;color:var(--ink-soft);}
-.cc-list{margin-top:32px;display:flex;flex-direction:column;gap:10px;}
-.cc{display:flex;gap:12px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-md);padding:13px 16px;}
-.cc .ci{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-info h2{font-size:clamp(28px,3vw,42px);margin-top:32px;line-height:1.25;}
+.contact-info .lead{margin-top:40px;font-size:15px;line-height:1.7;color:var(--ink-soft);}
+.contact-info .cc-list{margin-top:40px;}
+.cc-list{margin-top:20px;display:flex;flex-direction:column;gap:12px;max-width:380px;}
+.cc{display:flex;gap:10px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-md);padding:11px 14px;}
+.cc .ci{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .cc .ci.or{background:var(--or-soft);color:var(--or1);}
 .cc .ci.em{background:var(--em-soft);color:var(--em1);}
 .cc .lab{font-size:10.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em;}
-.cc .val{font-size:14px;font-weight:700;margin-top:1px;}
+.cc .val{font-size:13px;font-weight:700;margin-top:5px;background:none;border:none;border-radius:0;padding:0;display:block;}
 
 .form-card{background:var(--subtle);border:1.5px solid var(--line);border-radius:var(--r-xl);padding:40px 38px;}
 .form-card h3{font-size:22px;font-weight:800;}
@@ -623,7 +624,7 @@ footer .fcontact b{color:#fff;}
               <tr><td>Дата создания</td><td>2024 год</td></tr>
               <tr><td>Юридический адрес</td><td>115580, г. Москва, вн. тер. г. Муниципальный округ Царицыно, ул. Бакинская, д. 15, кв. 72</td></tr>
               <tr><td>Режим работы</td><td>Пн–Пт, 10:00–19:00 (МСК)</td></tr>
-              <tr><td>Телефон / E-mail</td><td>+7 (926) 724-99-54 · info@energy-care.ru</td></tr>
+              <tr><td>Телефон / E-mail</td><td>+7 (926) 724-99-54 · info@energiya-zaboty.ru</td></tr>
             </table>
           </div></div>
         </div>
@@ -667,7 +668,7 @@ footer .fcontact b{color:#fff;}
         <div class="acc">
           <button class="acc-head"><span class="acc-num">05</span><span class="acc-title">Руководство. Педагогический состав</span><span class="acc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink-soft)" stroke-width="2.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
           <div class="acc-body"><div class="inner">
-            <ul><li><b>Ермакова Эллина</b> — генеральный директор клиники «Эстетика Дентал»;</li><li><b>Акопян Асмик</b> — исполнительный директор клиники «Эстетика Дентал»;</li><li><b>Тертяк Валерия</b> — заместитель исполнительного директора клиники «Эстетика Дентал».</li></ul>
+            <ul><li><b>Ермакова Эллина</b> — эксперт по построению команд и сервиса;</li><li><b>Акопян Асмик</b> — эксперт по стратегическому управлению;</li><li><b>Тертяк Валерия</b> — эксперт по сопровождению пациентского пути и сервисным стандартам клиники.</li></ul>
           </div></div>
         </div>
 
@@ -738,7 +739,7 @@ footer .fcontact b{color:#fff;}
           </div>
           <label class="consent">
             <input type="checkbox" name="consent"/>
-            <span>Я согласен(на) на обработку персональных данных в соответствии с политикой конфиденциальности.</span>
+            <span>Я согласен(на) на обработку персональных данных в соответствии с <a href="privacy-policy/" target="_blank" style="color:var(--or1);">политикой конфиденциальности</a>.</span>
           </label>
           <button type="submit" class="btn btn-or">Отправить заявку</button>
         </form>
@@ -756,15 +757,15 @@ footer .fcontact b{color:#fff;}
         <p class="lead">Заполните форму, и мы свяжемся с вами для консультации и оформления документов.</p>
         <div class="cc-list">
           <div class="cc">
-            <span class="ci or"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span class="ci or"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
             <div><div class="lab">Телефон</div><a href="tel:+79267249954" class="val" style="display:block;color:inherit;text-decoration:none;">+7 (926) 724-99-54</a></div>
           </div>
           <div class="cc">
-            <span class="ci em"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-            <div><div class="lab">E-mail</div><a href="mailto:info@energy-care.ru" class="val" style="display:block;color:inherit;text-decoration:none;">info@energy-care.ru</a></div>
+            <span class="ci em"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <div><div class="lab">E-mail</div><a href="mailto:info@energiya-zaboty.ru" class="val" style="display:block;color:inherit;text-decoration:none;">info@energiya-zaboty.ru</a></div>
           </div>
           <div class="cc">
-            <span class="ci or"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span class="ci or"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <div><div class="lab">Адрес</div><div class="val">г. Москва, ул. Бакинская, д. 15</div></div>
           </div>
         </div>
@@ -814,7 +815,11 @@ footer .fcontact b{color:#fff;}
     </div>
     <div class="foot-bot">
       <span>© 2026 АНО ДПО «Энергия заботы и творчества». Все права защищены.</span>
-      <span>Политика конфиденциальности · Договор оферты</span>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="privacy-policy/" style="color:rgba(255,255,255,.6);transition:color .15s;" onmouseover="this.style.color='#FF8A3D'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Политика конфиденциальности</a>
+        <a href="personal-data-policy/" style="color:rgba(255,255,255,.6);transition:color .15s;" onmouseover="this.style.color='#FF8A3D'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Политика обработки ПД</a>
+        <a href="consent/" style="color:rgba(255,255,255,.6);transition:color .15s;" onmouseover="this.style.color='#FF8A3D'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Согласие на обработку ПД</a>
+      </div>
     </div>
   </div>
 </footer>
