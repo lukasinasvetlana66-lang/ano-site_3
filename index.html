@@ -349,6 +349,28 @@ footer .fcontact b{color:#fff;}
   .acc-head{padding:16px 16px;gap:10px;}
   .acc-body .inner{padding-left:20px;padding-right:16px;}
 }
+
+/* ═══ PROGRAM MODAL ══════════════════ */
+.btn-link-sm{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;color:var(--ink-soft);background:none;border:none;cursor:pointer;padding:0;margin-top:10px;font-family:inherit;transition:color .15s;}
+.btn-link-sm:hover{color:var(--or1);}
+.modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(3px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .2s;}
+.modal-overlay.is-open{display:flex;opacity:1;}
+.modal-box{background:#fff;border-radius:var(--r-lg);max-width:620px;width:100%;max-height:86vh;overflow-y:auto;box-shadow:var(--sh-lg);transform:translateY(12px) scale(.98);transition:transform .22s;}
+.modal-overlay.is-open .modal-box{transform:translateY(0) scale(1);}
+.modal-head{position:sticky;top:0;background:#fff;padding:24px 28px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:16px;z-index:2;}
+.modal-head .ptag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--or1);background:var(--or-soft);padding:4px 10px;border-radius:6px;margin-bottom:8px;}
+.modal-head h3{font-size:19px;font-weight:800;line-height:1.3;color:var(--ink);}
+.modal-head .mclose{flex-shrink:0;width:32px;height:32px;border-radius:50%;border:none;background:var(--subtle);color:var(--ink-soft);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s;}
+.modal-head .mclose:hover{background:var(--or-soft);color:var(--or1);}
+.modal-body{padding:18px 28px 28px;}
+.mod-row{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);}
+.mod-row:last-of-type{border-bottom:none;}
+.mod-num{flex-shrink:0;width:30px;height:30px;border-radius:9px;background:var(--or-soft);color:var(--or1);font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.mod-name{flex:1;font-size:13.8px;font-weight:600;color:var(--ink);line-height:1.4;}
+.mod-h{flex-shrink:0;font-size:12.5px;font-weight:700;color:var(--muted);background:var(--subtle);padding:4px 10px;border-radius:7px;white-space:nowrap;}
+.mod-total{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:16px;border-top:2px solid var(--ink);font-weight:800;font-size:14.5px;color:var(--ink);}
+.mod-total span:last-child{color:var(--or1);}
+.modal-cta{margin-top:22px;text-align:center;}
 </style>
 </head>
 <body>
@@ -457,6 +479,10 @@ footer .fcontact b{color:#fff;}
           <div class="price">9 900 ₽<small>за весь курс</small></div>
           <button class="btn btn-white btn-sm" onclick="prefill('Искусство сервиса: администратор медицинской клиники')">Записаться</button>
         </div>
+        <button class="btn-link-sm" onclick="openProgramModal('admin')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          Программа курса (12 модулей)
+        </button>
       </article>
 
       <article class="prog-s t fu fu-d1">
@@ -841,6 +867,38 @@ footer .fcontact b{color:#fff;}
   </div>
 </div>
 
+<!-- ═══ PROGRAM MODAL ══════════════════ -->
+<div class="modal-overlay" id="modal-admin" onclick="if(event.target===this)closeProgramModal('admin')">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <span class="ptag">Администратор</span>
+        <h3>Искусство сервиса: администратор медицинской клиники</h3>
+      </div>
+      <button class="mclose" onclick="closeProgramModal('admin')" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="mod-row"><span class="mod-num">1</span><span class="mod-name">Сервис в холле</span><span class="mod-h">8 ч</span></div>
+      <div class="mod-row"><span class="mod-num">2</span><span class="mod-name">Регламенты и работа с пациентами</span><span class="mod-h">6 ч</span></div>
+      <div class="mod-row"><span class="mod-num">3</span><span class="mod-name">Документы и проверки</span><span class="mod-h">6 ч</span></div>
+      <div class="mod-row"><span class="mod-num">4</span><span class="mod-name">Услуги клиники</span><span class="mod-h">7 ч</span></div>
+      <div class="mod-row"><span class="mod-num">5</span><span class="mod-name">Лист ожидания и отчёты</span><span class="mod-h">4 ч</span></div>
+      <div class="mod-row"><span class="mod-num">6</span><span class="mod-name">Финансы</span><span class="mod-h">7 ч</span></div>
+      <div class="mod-row"><span class="mod-num">7</span><span class="mod-name">Должность и развитие</span><span class="mod-h">4 ч</span></div>
+      <div class="mod-row"><span class="mod-num">8</span><span class="mod-name">Скрипты и телефонные звонки</span><span class="mod-h">8 ч</span></div>
+      <div class="mod-row"><span class="mod-num">9</span><span class="mod-name">Работа с возражениями</span><span class="mod-h">6 ч</span></div>
+      <div class="mod-row"><span class="mod-num">10</span><span class="mod-name">Аргументация кейсов</span><span class="mod-h">5 ч</span></div>
+      <div class="mod-row"><span class="mod-num">11</span><span class="mod-name">Работа куратора</span><span class="mod-h">4 ч</span></div>
+      <div class="mod-row"><span class="mod-num">12</span><span class="mod-name">Нестандартные ситуации</span><span class="mod-h">5 ч</span></div>
+      <div class="mod-row"><span class="mod-num">·</span><span class="mod-name">Итоговая аттестация</span><span class="mod-h">2 ч</span></div>
+      <div class="mod-total"><span>Всего по программе</span><span>72 акад. часа</span></div>
+      <div class="modal-cta">
+        <button class="btn btn-or btn-sm" onclick="closeProgramModal('admin');prefill('Искусство сервиса: администратор медицинской клиники')">Записаться на курс — 9 900 ₽</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   // Header scroll
@@ -924,6 +982,27 @@ footer .fcontact b{color:#fff;}
   });
   form.consent.addEventListener('change',function(){if(form.consent.checked)form.querySelector('.consent').style.color='';});
 })();
+
+function openProgramModal(id){
+  var m=document.getElementById('modal-'+id);
+  if(!m)return;
+  m.classList.add('is-open');
+  document.body.style.overflow='hidden';
+}
+function closeProgramModal(id){
+  var m=document.getElementById('modal-'+id);
+  if(!m)return;
+  m.classList.remove('is-open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    document.querySelectorAll('.modal-overlay.is-open').forEach(function(m){
+      m.classList.remove('is-open');
+    });
+    document.body.style.overflow='';
+  }
+});
 </script>
 </body>
 </html>
