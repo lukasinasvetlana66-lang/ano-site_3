@@ -154,8 +154,8 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 .prow{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;z-index:1;}
 .prog-big .prow .price{font-size:26px;font-weight:900;color:#fff;}
 .prog-big .prow .price small{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,.65);}
-.btn-link-sm{background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;padding:0;margin-top:10px;color:rgba(255,255,255,.75);transition:color .15s;}
-.btn-link-sm:hover{color:#fff;}
+.btn-link-sm{background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:0;margin-top:18px;margin-bottom:6px;color:#fff;letter-spacing:.02em;transition:color .15s;}
+.btn-link-sm:hover{color:rgba(255,255,255,.8);}
 
 /* prog-s.b (Куратор) → маленькая белая, левый-низ */
 .prog-s{background:#fff;border:1.5px solid var(--line);border-radius:var(--r-xl);padding:26px 26px 22px;display:flex;flex-direction:column;box-shadow:var(--sh-sm);transition:transform .2s ease,box-shadow .2s ease;}
@@ -171,15 +171,15 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 .prog-s.b .price{color:var(--bl1);}
 
 /* prog-s.t (Руководитель) → БОЛЬШАЯ БЕЛАЯ, правый столбец */
-.prog-s.t{grid-column:2;grid-row:1/3;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-xl);padding:38px 36px;display:flex;flex-direction:column;box-shadow:var(--sh-sm);position:relative;overflow:hidden;min-height:520px;}
+.prog-s.t{grid-column:2;grid-row:1/3;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-xl);padding:38px 36px 22px;display:flex;flex-direction:column;box-shadow:var(--sh-sm);position:relative;overflow:hidden;min-height:520px;}
 .prog-s.t .ptag{background:var(--or-soft);color:var(--or1);}
 .prog-s.t h3{font-size:clamp(22px,2.2vw,28px);margin-top:16px;line-height:1.18;}
 .prog-s.t .pdesc{margin-top:12px;font-size:15px;flex-grow:1;line-height:1.6;}
 .prog-s.t .pmeta span{font-size:12px;}
-.prog-s.t .prow{border-top:none;margin-top:22px;padding-top:0;}
+.prog-s.t .prow{border-top:none;margin-top:22px;padding-top:0;justify-content:flex-start;gap:24px;}
 .prog-s.t .price{font-size:30px;color:var(--or1);}
 .prog-s.t .price small{display:block;font-size:11px;font-weight:600;color:var(--muted);}
-.speaker-photo{position:absolute;bottom:0;right:-60px;width:480px;object-fit:contain;object-position:bottom right;z-index:0;pointer-events:none;}
+.speaker-photo{position:absolute;bottom:0;right:-20px;width:480px;object-fit:contain;object-position:bottom right;z-index:0;pointer-events:none;}
 
 /* ── ABOUT ───────────────────────── */
 .about-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:stretch;}
@@ -306,13 +306,13 @@ section:not(.hero){padding:88px 0;}
 /* ── DECOR: origami-flower motif ─────────────── */
 #programs{position:relative;overflow:hidden;}
 .eios-block{position:relative;}
-footer.site{position:relative;overflow:hidden;}
+footer.site{position:relative;overflow:visible;}
 .deco-flower{position:absolute;z-index:0;pointer-events:none;user-select:none;}
 .deco-hero{width:380px;top:-56px;left:-64px;opacity:.16;transform:rotate(-12deg);}
 .deco-programs{width:250px;right:-56px;bottom:-46px;opacity:.14;transform:rotate(14deg);}
 .deco-about{width:200px;right:-38px;bottom:-38px;opacity:.24;transform:rotate(-10deg);}
 .deco-eios{width:240px;right:-34px;top:-44px;opacity:.2;transform:rotate(12deg);}
-.deco-footer{width:220px;right:40px;top:-38px;opacity:.1;transform:rotate(-14deg);}
+.deco-footer{width:240px;right:120px;top:-20px;opacity:.12;transform:rotate(-14deg);}
 
 /* ── FOOTER ──────────────────────── */
 footer.site{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 28px;}
@@ -385,9 +385,94 @@ footer .fcontact b{color:#fff;}
   .acc-body .inner{padding-left:20px;padding-right:16px;}
 }
 
+/* ═══ MOBILE ADAPTIVE ══════════════════ */
+
+/* — Hero — */
+@media(max-width:720px){
+  .hero{min-height:70vh;max-height:none;}
+  .hero-inner{padding-bottom:40px;}
+  .hero h1{font-size:clamp(28px,8vw,38px);}
+  .hero-lead{font-size:15px;}
+  .hero-cta{flex-direction:column;align-items:stretch;}
+  .hero-cta .btn{width:100%;text-align:center;}
+}
+
+/* — Programs — */
+@media(max-width:1040px){
+  .prog-s.t{grid-column:1;grid-row:auto;min-height:auto;}
+  .prog-s.b{grid-column:1;grid-row:auto;}
+  .speaker-photo{width:280px;right:-10px;}
+}
+@media(max-width:720px){
+  .speaker-photo{display:none;}
+  .prog-s.t{padding:26px 22px 22px;}
+  .prog-s.t .prow{margin-top:16px;}
+  .prog-s.t .price{font-size:24px;}
+  /* скрываем журавля на мобильном */
+  .prog-s.t > img[src*="crane"]{display:none;}
+  .prog-grid-asym{gap:14px;}
+  .prog-big{padding:22px 20px 18px;}
+  .prog-big .prow .price{font-size:22px;}
+}
+
+/* — About — */
+@media(max-width:1040px){
+  .about-flower{display:none !important;}
+  .about-heading-overlay{position:static !important;top:auto !important;display:block !important;pointer-events:auto !important;}
+  .about-heading-spacer{display:none !important;}
+  .about-heading-overlay > div{padding:0 !important;display:block !important;}
+  .about-section{padding-top:80px !important;}
+  .about-main-h2{font-size:clamp(26px,4vw,38px) !important;}
+}
+@media(max-width:720px){
+  .about-section{padding-top:60px !important;}
+  .about-main-h2{font-size:clamp(24px,6vw,32px) !important;}
+  .about-dark{padding:30px 24px;}
+  .about-dark .mission{font-size:15px;}
+  .val{padding:16px 14px;gap:12px;}
+}
+
+/* — Team — */
+@media(max-width:720px){
+  .team-layout{gap:24px;}
+  .team-shuffle-grid{grid-template-columns:repeat(4,1fr);gap:6px;}
+}
+@media(max-width:480px){
+  .team-shuffle-grid{grid-template-columns:repeat(4,1fr);gap:4px;}
+}
+
+/* — EIOS — */
+@media(max-width:720px){
+  .eios-inner{padding:32px 22px;}
+  .eios-feats{grid-template-columns:1fr 1fr;gap:10px;}
+  .efeat{padding:14px;}
+  .efeat h4{font-size:13.5px;}
+}
+@media(max-width:480px){
+  .eios-feats{grid-template-columns:1fr;}
+}
+
+/* — Contact — */
+@media(max-width:720px){
+  .contact-wrap > .fu.fu-d1 > img[src*="elephant"]{max-width:240px;}
+  .cc-list{max-width:100%;}
+}
+
+/* — Section spacing — */
+@media(max-width:720px){
+  section:not(.hero){padding:56px 0;}
+}
+@media(max-width:480px){
+  section:not(.hero){padding:44px 0;}
+  .sec-h{margin-bottom:28px;}
+  .wrap{padding:0 16px;}
+}
+
 /* ═══ PROGRAM MODAL ══════════════════ */
 .btn-link-sm{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;color:var(--ink-soft);background:none;border:none;cursor:pointer;padding:0;margin-top:10px;font-family:inherit;transition:color .15s;}
 .btn-link-sm:hover{color:var(--or1);}
+.prog-big .btn-link-sm{color:#fff;letter-spacing:.06em;}
+.prog-big .btn-link-sm:hover{color:rgba(255,255,255,.75);}
 .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(3px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .2s;}
 .modal-overlay.is-open{display:flex;opacity:1;}
 .modal-box{background:#fff;border-radius:var(--r-lg);max-width:620px;width:100%;max-height:86vh;overflow-y:auto;box-shadow:var(--sh-lg);transform:translateY(12px) scale(.98);transition:transform .22s;}
@@ -455,7 +540,6 @@ footer .fcontact b{color:#fff;}
 
 <!-- ═══ PROGRAMS ══════════════════════ -->
 <section id="programs">
-  <img src="assets/origami-flower.webp" alt="" aria-hidden="true" class="deco-flower deco-programs"/>
   <div class="wrap above">
     <div class="sec-h fu">
       <span class="eyebrow ey-or">Программы обучения</span>
@@ -504,7 +588,7 @@ footer .fcontact b{color:#fff;}
       <article class="prog-s t fu fu-d1">
         <span class="ptag">Руководитель</span>
         <h3>Управление пациентским опытом и развитие клиники</h3>
-        <p class="pdesc" style="max-width:380px;">CJM, инновации в сервис, создание эффективной команды администраторов. Лидеры клиник, которые хотят вывести сервис на новый уровень и выстроить культуру заботы о пациентах.</p>
+        <p class="pdesc">CJM, инновации в сервис, создание эффективной команды администраторов. Лидеры клиник, которые хотят вывести сервис на новый уровень и выстроить культуру заботы о пациентах.</p>
         <div class="pmeta">
           <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>144 акад. часа</span>
           <span>1 месяц</span>
@@ -514,6 +598,7 @@ footer .fcontact b{color:#fff;}
           <div class="price">14 900 ₽<small>за весь курс</small></div>
           <button class="btn btn-or btn-sm" onclick="prefill('Управление пациентским опытом и развитие клиники')">Записаться</button>
         </div>
+        <img src="assets/origami/crane-blue.png" alt="" aria-hidden="true" style="position:absolute;width:260px;bottom:160px;left:10px;transform:rotate(5deg);opacity:.9;z-index:0;pointer-events:none;mix-blend-mode:multiply;">
         <img src="assets/tertyak-nobg.png" alt="" aria-hidden="true" class="speaker-photo">
       </article>
 
@@ -522,14 +607,14 @@ footer .fcontact b{color:#fff;}
 </section>
 
 <!-- ═══ ABOUT ══════════════════════════ -->
-<section id="about" style="position:relative;overflow:visible;padding-top:380px;">
-  <img src="assets/origami-flower.webp" alt="" aria-hidden="true" style="position:absolute;width:300px;top:30px;left:max(8px,calc(50% - 580px));transform:rotate(-12deg);opacity:.9;z-index:2;pointer-events:none;mix-blend-mode:multiply;">
-  <div style="position:absolute;top:50px;left:0;right:0;display:flex;justify-content:center;z-index:3;pointer-events:none;">
+<section id="about" class="about-section" style="position:relative;overflow:visible;padding-top:480px;">
+  <img src="assets/origami-flower.webp" alt="" aria-hidden="true" class="about-flower" style="position:absolute;width:320px;top:60px;left:max(8px,calc(50% - 580px));transform:rotate(-12deg);opacity:.9;z-index:2;pointer-events:none;mix-blend-mode:multiply;">
+  <div class="about-heading-overlay" style="position:absolute;top:90px;left:0;right:0;display:flex;justify-content:center;z-index:3;pointer-events:none;">
     <div style="width:100%;max-width:var(--maxw);padding:0 30px;display:flex;align-items:flex-start;">
-      <div style="width:320px;flex-shrink:0;"></div>
+      <div class="about-heading-spacer" style="width:340px;flex-shrink:0;"></div>
       <div style="pointer-events:auto;">
         <span class="eyebrow ey-or">Об организации</span>
-        <h2 style="font-size:clamp(28px,3vw,42px);margin-top:10px;line-height:1.12;color:var(--ink);">Создаём <span class="gr-or">среду заботы</span> и <span class="gr-em">творчества,</span><br>где рождается сервис</h2>
+        <h2 class="about-main-h2" style="font-size:clamp(28px,3vw,42px);margin-top:10px;line-height:1.12;color:var(--ink);">Создаём <span class="gr-or">среду заботы</span><br>и&nbsp;<span class="gr-em">творчества,</span> где рождается сервис</h2>
       </div>
     </div>
   </div>
@@ -637,7 +722,7 @@ footer .fcontact b{color:#fff;}
     <div class="team-layout">
       <div class="team-text fu">
         <span class="eyebrow ey-or">Наша команда</span>
-        <h2 style="margin-top:12px;font-size:clamp(32px,4vw,52px);line-height:1.08;">Люди,<br>которые создают<br>сервис каждый день</h2>
+        <h2 style="margin-top:12px;font-size:clamp(32px,4vw,52px);line-height:1.08;">Люди,<br><span class="gr-or">которые создают</span><br><span class="gr-em">сервис каждый день</span></h2>
         <p style="margin-top:20px;font-size:16px;color:var(--ink-soft);max-width:380px;line-height:1.6;">Профессионалы медицинского сервиса, которые ежедневно выстраивают заботливое взаимодействие с пациентами.</p>
       </div>
       <div class="team-shuffle-grid" id="teamGrid">
@@ -864,6 +949,7 @@ footer .fcontact b{color:#fff;}
             <div><div class="lab">Адрес</div><div class="val">г. Москва, ул. Бакинская, д. 15</div></div>
           </div>
         </div>
+        <img src="assets/origami/elephant-green.png" alt="" aria-hidden="true" style="display:block;width:100%;max-width:340px;margin-top:24px;pointer-events:none;">
       </div>
 
     </div>
