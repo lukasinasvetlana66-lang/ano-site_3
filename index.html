@@ -389,12 +389,15 @@ footer .fcontact b{color:#fff;}
 
 /* — Hero — */
 @media(max-width:720px){
-  .hero{min-height:70vh;max-height:none;}
-  .hero-inner{padding:calc(var(--nav-h) + 52px) 0 44px;}
+  .hero{min-height:80vh;max-height:none;}
+  .hero-inner{padding:calc(var(--nav-h) + 140px) 20px 80px;}
   .hero h1{font-size:clamp(28px,8vw,38px);}
-  .hero-lead{font-size:15px;}
-  .hero-cta{flex-direction:column;align-items:stretch;}
+  .hero-lead{font-size:15px;margin-top:20px;}
+  .hero-cta{flex-direction:column;align-items:stretch;margin-top:32px;gap:14px;}
   .hero-cta .btn{width:100%;text-align:center;}
+}
+@media(max-width:480px){
+  .hero-inner{padding:calc(var(--nav-h) + 110px) 20px 64px;}
 }
 
 /* — Programs — */
