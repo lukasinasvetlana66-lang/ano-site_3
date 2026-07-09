@@ -408,27 +408,28 @@ footer .fcontact b{color:#fff;}
 }
 @media(max-width:720px){
   .prog-s.t{padding:26px 22px 0;}
+  .prog-s.t .pdesc{flex-grow:0;}
   .prog-s.t .prow{margin-top:16px;}
   .prog-s.t .price{font-size:24px;}
-  /* показываем журавля на мобильном — маленький, слева */
+  /* журавль — прилипает к Валерии слева снизу */
   .prog-s.t > img[src*="crane"]{
     display:block !important;
     position:absolute !important;
-    width:120px !important;
-    bottom:200px;
+    width:110px !important;
+    bottom:20px;
     left:10px;
-    opacity:.7;
+    opacity:.8;
   }
   .prog-grid-asym{gap:14px;}
   .prog-big{padding:22px 20px 18px;}
   .prog-big .prow .price{font-size:22px;}
-  /* Валерия — больше, внизу карточки */
+  /* Валерия — на всю ширину, вплотную к контенту */
   .speaker-photo{
     position:static !important;
     display:block;
     width:100%;
     max-width:420px;
-    margin:24px auto 0;
+    margin:16px auto 0;
     object-fit:contain;
     object-position:bottom center;
     align-self:center;
