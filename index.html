@@ -390,7 +390,7 @@ footer .fcontact b{color:#fff;}
 /* — Hero — */
 @media(max-width:720px){
   .hero{min-height:70vh;max-height:none;}
-  .hero-inner{padding:calc(var(--nav-h) + 24px) 0 44px;}
+  .hero-inner{padding:calc(var(--nav-h) + 52px) 0 44px;}
   .hero h1{font-size:clamp(28px,8vw,38px);}
   .hero-lead{font-size:15px;}
   .hero-cta{flex-direction:column;align-items:stretch;}
@@ -407,17 +407,25 @@ footer .fcontact b{color:#fff;}
   .prog-s.t{padding:26px 22px 0;}
   .prog-s.t .prow{margin-top:16px;}
   .prog-s.t .price{font-size:24px;}
-  .prog-s.t > img[src*="crane"]{display:none;}
+  /* показываем журавля на мобильном — маленький, слева */
+  .prog-s.t > img[src*="crane"]{
+    display:block !important;
+    position:absolute !important;
+    width:120px !important;
+    bottom:200px;
+    left:10px;
+    opacity:.7;
+  }
   .prog-grid-asym{gap:14px;}
   .prog-big{padding:22px 20px 18px;}
   .prog-big .prow .price{font-size:22px;}
-  /* Валерия — статичный блок внизу карточки */
+  /* Валерия — больше, внизу карточки */
   .speaker-photo{
     position:static !important;
     display:block;
-    width:220px;
-    max-width:60%;
-    margin:20px auto 0;
+    width:280px;
+    max-width:75%;
+    margin:24px auto 0;
     object-fit:contain;
     object-position:bottom center;
     align-self:center;
@@ -427,43 +435,41 @@ footer .fcontact b{color:#fff;}
 /* — About — */
 @media(max-width:1040px){
   .about-section{padding-top:60px !important;}
-  /* цветок — маленький, в потоке */
   .about-flower{
     position:static !important;
     display:block !important;
-    width:120px !important;
+    width:160px !important;
     opacity:.95 !important;
     transform:rotate(-12deg) !important;
     flex-shrink:0;
-    margin-top:4px;
+    margin-top:8px;
   }
-  /* оверлей становится обычным flex-контейнером */
   .about-heading-overlay{
     position:static !important;
     top:auto !important;
     display:flex !important;
-    align-items:flex-start !important;
-    gap:20px !important;
+    align-items:center !important;
+    gap:24px !important;
     pointer-events:auto !important;
     padding:0 30px !important;
     max-width:var(--maxw);
-    margin:0 auto;
+    margin:0 auto 40px !important;
   }
   .about-heading-spacer{display:none !important;}
-  .about-heading-overlay > div{padding:0 !important;display:flex !important;align-items:flex-start !important;gap:20px !important;width:100% !important;}
+  .about-heading-overlay > div{padding:0 !important;display:flex !important;align-items:center !important;gap:24px !important;width:100% !important;}
   .about-main-h2{font-size:clamp(24px,4vw,38px) !important;}
 }
 @media(max-width:720px){
-  .about-heading-overlay{padding:0 20px !important;}
-  .about-flower{width:100px !important;}
+  .about-heading-overlay{padding:0 20px !important;margin:0 auto 32px !important;gap:20px !important;}
+  .about-flower{width:130px !important;}
   .about-main-h2{font-size:clamp(20px,6vw,28px) !important;}
   .about-dark{padding:30px 24px;}
   .about-dark .mission{font-size:15px;}
   .val{padding:16px 14px;gap:12px;}
 }
 @media(max-width:480px){
-  .about-flower{width:80px !important;}
-  .about-heading-overlay{gap:14px !important;}
+  .about-flower{width:100px !important;}
+  .about-heading-overlay{gap:16px !important;margin:0 auto 24px !important;}
   .about-main-h2{font-size:clamp(18px,7vw,24px) !important;}
 }
 
