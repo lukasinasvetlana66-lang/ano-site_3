@@ -404,15 +404,24 @@ footer .fcontact b{color:#fff;}
   .speaker-photo{width:280px;right:-10px;}
 }
 @media(max-width:720px){
-  .speaker-photo{display:none;}
-  .prog-s.t{padding:26px 22px 22px;}
+  .prog-s.t{padding:26px 22px 0;}
   .prog-s.t .prow{margin-top:16px;}
   .prog-s.t .price{font-size:24px;}
-  /* скрываем журавля на мобильном */
   .prog-s.t > img[src*="crane"]{display:none;}
   .prog-grid-asym{gap:14px;}
   .prog-big{padding:22px 20px 18px;}
   .prog-big .prow .price{font-size:22px;}
+  /* Валерия — статичный блок внизу карточки */
+  .speaker-photo{
+    position:static !important;
+    display:block;
+    width:220px;
+    max-width:60%;
+    margin:20px auto 0;
+    object-fit:contain;
+    object-position:bottom center;
+    align-self:center;
+  }
 }
 
 /* — About — */
