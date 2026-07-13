@@ -179,8 +179,9 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 .prog-s.t .prow{border-top:none;margin-top:22px;padding-top:0;justify-content:flex-start;gap:24px;}
 .prog-s.t .price{font-size:30px;color:var(--or1);}
 .prog-s.t .price small{display:block;font-size:11px;font-weight:600;color:var(--muted);}
-.speaker-photo{position:absolute;bottom:0;right:0;width:360px;object-fit:contain;object-position:bottom right;z-index:0;pointer-events:none;}
+.speaker-photo{position:absolute;bottom:-100px;right:0;width:360px;object-fit:contain;object-position:bottom right;z-index:0;pointer-events:none;}
 .prog-s.t .ptag,.prog-s.t h3,.prog-s.t .pdesc,.prog-s.t .pmeta,.prog-s.t .prow{position:relative;z-index:1;max-width:calc(100% - 300px);}
+.prog-s.t .pdesc{text-align:justify;}
 
 /* ── ABOUT ───────────────────────── */
 .about-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:stretch;}
@@ -405,7 +406,7 @@ footer .fcontact b{color:#fff;}
 @media(max-width:1040px){
   .prog-s.t{grid-column:1;grid-row:auto;min-height:auto;}
   .prog-s.b{grid-column:1;grid-row:auto;}
-  .speaker-photo{width:280px;right:-10px;}
+  .speaker-photo{width:280px;right:-10px;bottom:-60px;}
 }
 @media(max-width:720px){
   .prog-s.t{padding:26px 22px 0;}
@@ -416,10 +417,11 @@ footer .fcontact b{color:#fff;}
   .prog-s.t > img[src*="heart"]{
     display:block !important;
     position:absolute !important;
-    width:90px !important;
-    bottom:16px;
-    left:10px;
-    opacity:.8;
+    width:80px !important;
+    bottom:10px !important;
+    right:10px !important;
+    left:auto !important;
+    opacity:.7;
   }
   .prog-grid-asym{gap:14px;}
   .prog-big{padding:22px 20px 18px;}
@@ -644,7 +646,7 @@ footer .fcontact b{color:#fff;}
           <div class="price">14 900 ₽<small>за весь курс</small></div>
           <button class="btn btn-or btn-sm" onclick="prefill('Управление пациентским опытом и развитие клиники')">Записаться</button>
         </div>
-        <img src="assets/heart.png" alt="" aria-hidden="true" style="position:absolute;width:200px;bottom:140px;left:10px;transform:rotate(-8deg);opacity:.85;z-index:0;pointer-events:none;">
+        <img src="assets/heart.png" alt="" aria-hidden="true" style="position:absolute;width:180px;bottom:10px;right:150px;transform:rotate(8deg);opacity:.7;z-index:1;pointer-events:none;">
         <img src="assets/ellina-nobg.png" alt="" aria-hidden="true" class="speaker-photo">
       </article>
 
