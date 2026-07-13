@@ -4,6 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>АНО ДПО «Энергия заботы и творчества» — обучение для медицинских клиник</title>
+<link rel="preload" as="image" href="assets/hero-poster.webp" fetchpriority="high"/>
+<link rel="preload" as="video" href="assets/hero-bg-web2.mp4" type="video/mp4"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -552,7 +555,7 @@ footer .fcontact b{color:#fff;}
 <!-- ═══ HEADER ═══════════════════════ -->
 <header class="site" id="top">
   <div class="wrap nav">
-    <a href="#top" class="brand"><img src="assets/logo.png" alt="АНО ДПО «Энергия заботы и творчества»"/></a>
+    <a href="#top" class="brand"><img src="assets/logo.webp" alt="АНО ДПО «Энергия заботы и творчества»"/></a>
     <nav class="nav-links">
       <a href="#programs">Программы</a>
       <a href="#about">Об организации</a>
@@ -574,8 +577,8 @@ footer .fcontact b{color:#fff;}
 
 <!-- ═══ HERO ══════════════════════════ -->
 <section class="hero">
-  <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
-    <source src="assets/hero-bg-web.mp4" type="video/mp4">
+  <video class="hero-video-bg" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.webp">
+    <source src="assets/hero-bg-web2.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -643,7 +646,7 @@ footer .fcontact b{color:#fff;}
         <span class="ptag">Руководитель</span>
         <h3>Управление пациентским опытом и развитие клиники</h3>
         <p class="pdesc">CJM, инновации в сервис, создание эффективной команды администраторов. Лидеры клиник, которые хотят вывести сервис на новый уровень и выстроить культуру заботы о пациентах.</p>
-        <img src="assets/heart.png?v=2" alt="" aria-hidden="true" class="heart-inline">
+        <img loading="lazy" decoding="async" src="assets/heart.webp" alt="" aria-hidden="true" class="heart-inline">
         <div class="pmeta">
           <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>144 акад. часа</span>
           <span>1 месяц</span>
@@ -653,7 +656,7 @@ footer .fcontact b{color:#fff;}
           <div class="price">14 900 ₽<small>за весь курс</small></div>
           <button class="btn btn-or btn-sm" onclick="prefill('Управление пациентским опытом и развитие клиники')">Записаться</button>
         </div>
-        <img src="assets/ellina-nobg.png" alt="" aria-hidden="true" class="speaker-photo">
+        <img loading="lazy" decoding="async" src="assets/ellina-nobg.webp" alt="" aria-hidden="true" class="speaker-photo">
       </article>
 
     </div>
@@ -662,7 +665,7 @@ footer .fcontact b{color:#fff;}
 
 <!-- ═══ ABOUT ══════════════════════════ -->
 <section id="about" class="about-section" style="position:relative;overflow:visible;padding-top:480px;">
-  <img src="assets/origami-flower.webp" alt="" aria-hidden="true" class="about-flower" style="position:absolute;width:320px;top:60px;left:max(8px,calc(50% - 580px));transform:rotate(-12deg);opacity:.9;z-index:2;pointer-events:none;mix-blend-mode:multiply;">
+  <img loading="lazy" decoding="async" src="assets/origami-flower2.webp" alt="" aria-hidden="true" class="about-flower" style="position:absolute;width:320px;top:60px;left:max(8px,calc(50% - 580px));transform:rotate(-12deg);opacity:.9;z-index:2;pointer-events:none;mix-blend-mode:multiply;">
   <div class="about-heading-overlay" style="position:absolute;top:90px;left:0;right:0;display:flex;justify-content:center;z-index:3;pointer-events:none;">
     <div style="width:100%;max-width:var(--maxw);padding:0 30px;display:flex;align-items:flex-start;">
       <div class="about-heading-spacer" style="width:340px;flex-shrink:0;"></div>
@@ -743,7 +746,7 @@ footer .fcontact b{color:#fff;}
     </div>
     <div class="teach-grid">
       <article class="teacher fu fu-d1">
-        <div class="ph"><img src="assets/ermakova.webp?v=2" alt="Ермакова Эллина" style="object-position:center 35%;"/></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="assets/ermakova2.webp" alt="Ермакова Эллина" style="object-position:center 35%;"/></div>
         <div class="tbody">
           <div class="tname">Ермакова Эллина</div>
           <div class="trole">Генеральный директор стоматологической клиники «Эстетика Дентал»</div>
@@ -751,7 +754,7 @@ footer .fcontact b{color:#fff;}
         </div>
       </article>
       <article class="teacher fu fu-d2">
-        <div class="ph"><img src="assets/akopyan.webp" alt="Акопян Асмик"/></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="assets/akopyan.webp" alt="Акопян Асмик"/></div>
         <div class="tbody">
           <div class="tname">Акопян Асмик</div>
           <div class="trole" style="color: rgb(255, 85, 0)">Исполнительный директор стоматологической клиники «Эстетика Дентал»</div>
@@ -759,7 +762,7 @@ footer .fcontact b{color:#fff;}
         </div>
       </article>
       <article class="teacher fu fu-d3">
-        <div class="ph"><img src="assets/tertyak.webp" alt="Тертяк Валерия"/></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="assets/tertyak.webp" alt="Тертяк Валерия"/></div>
         <div class="tbody">
           <div class="tname">Тертяк Валерия</div>
           <div class="trole" style="color: rgb(255, 85, 0)">Заместитель исполнительного директора стоматологической клиники «Эстетика Дентал»</div>
@@ -1002,7 +1005,7 @@ footer .fcontact b{color:#fff;}
             <div><div class="lab">Адрес</div><div class="val">г. Москва, ул. Бакинская, д. 15</div></div>
           </div>
         </div>
-        <img src="assets/origami/elephant-green.png" alt="" aria-hidden="true" style="display:block;width:100%;max-width:340px;margin-top:24px;pointer-events:none;">
+        <img loading="lazy" decoding="async" src="assets/origami/elephant-green.webp" alt="" aria-hidden="true" style="display:block;width:100%;max-width:340px;margin-top:24px;pointer-events:none;">
       </div>
 
     </div>
@@ -1011,11 +1014,11 @@ footer .fcontact b{color:#fff;}
 
 <!-- ═══ FOOTER ═════════════════════════ -->
 <footer class="site">
-  <img src="assets/origami-flower.webp" alt="" aria-hidden="true" class="deco-flower deco-footer"/>
+  <img loading="lazy" decoding="async" src="assets/origami-flower2.webp" alt="" aria-hidden="true" class="deco-flower deco-footer"/>
   <div class="wrap above">
     <div class="foot-grid">
       <div class="fbrand">
-        <img src="assets/logo.png" alt="АНО ДПО"/>
+        <img src="assets/logo.webp" alt="АНО ДПО"/>
         <p>Автономная некоммерческая организация дополнительного профессионального образования
 «Энергия заботы и творчества»
 
