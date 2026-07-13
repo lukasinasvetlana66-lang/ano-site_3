@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://energiya-zaboty.ru/sitemap.xml
