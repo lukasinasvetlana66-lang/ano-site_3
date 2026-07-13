@@ -426,19 +426,19 @@ footer .fcontact b{color:#fff;}
   .prog-s.t .pdesc{flex-grow:0;}
   .prog-s.t .prow{margin-top:16px;}
   .prog-s.t .price{font-size:24px;}
-  /* сердце — между текстом и чипами, меньше */
-  .heart-inline{width:100px;padding:8px 0;margin:0;}
+  /* сердце — справа, цена поднимается на его уровень */
+  .heart-inline{width:150px;padding:0;margin:4px 10px -150px auto;}
   .prog-grid-asym{gap:14px;}
   .prog-big{padding:22px 20px 18px;}
   .prog-big .prow .price{font-size:22px;}
-  /* Эллина — на всю ширину, по пояс */
+  /* Эллина — на всю ширину карточки, по пояс, крупно */
   .speaker-photo{
     position:static !important;
     display:block;
-    width:100%;
-    max-width:420px;
-    height:340px;
-    margin:16px auto 0;
+    width:calc(100% + 44px);
+    max-width:none;
+    height:460px;
+    margin:12px -22px 0;
     object-fit:cover;
     object-position:top center;
     align-self:center;
