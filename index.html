@@ -179,8 +179,12 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 .prog-s.t .prow{border-top:none;margin-top:22px;padding-top:0;justify-content:flex-start;gap:24px;}
 .prog-s.t .price{font-size:30px;color:var(--or1);}
 .prog-s.t .price small{display:block;font-size:11px;font-weight:600;color:var(--muted);}
-.speaker-photo{position:absolute;bottom:0;right:0;width:360px;object-fit:contain;object-position:bottom right;z-index:0;pointer-events:none;}
-.prog-s.t .ptag,.prog-s.t h3,.prog-s.t .pdesc,.prog-s.t .pmeta,.prog-s.t .prow{position:relative;z-index:1;max-width:calc(100% - 300px);}
+.speaker-photo{position:absolute;bottom:-180px;right:0;width:360px;object-fit:contain;object-position:bottom right;z-index:0;pointer-events:none;}
+.prog-s.t .ptag,.prog-s.t h3,.prog-s.t .pdesc,.prog-s.t .pmeta,.prog-s.t .prow{position:relative;z-index:1;}
+/* заголовок и описание — на всю ширину карточки */
+.prog-s.t .ptag,.prog-s.t h3,.prog-s.t .pdesc{max-width:100%;}
+/* чипы и цена — слева, не под фото */
+.prog-s.t .pmeta,.prog-s.t .prow{max-width:calc(100% - 300px);}
 .prog-s.t .pdesc{text-align:justify;hyphens:auto;flex-grow:0;}
 .prog-s.t .price{white-space:nowrap;}
 .prog-s.t .prow{flex-wrap:wrap;}
