@@ -141,7 +141,7 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 .hb2{animation-delay:.8s;}
 
 /* ── PROGRAMS ────────────────────── */
-.prog-grid-asym{display:grid;grid-template-columns:1fr 1.2fr;grid-template-rows:1fr 1fr;gap:20px;align-items:stretch;position:relative;z-index:1;}
+.prog-grid-asym{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-rows:1fr 1fr;gap:20px;align-items:stretch;position:relative;z-index:1;}
 
 /* prog-big (Администратор) → маленькая ОРАНЖЕВАЯ, левый-верх */
 .prog-big{grid-column:1;grid-row:1;background:var(--or-grad);border:none;border-radius:var(--r-xl);padding:26px 26px 22px;display:flex;flex-direction:column;box-shadow:0 18px 48px -14px var(--or-shadow);position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease;}
@@ -354,7 +354,7 @@ footer .fcontact b{color:#fff;}
   .hero-art{height:340px;}
   .about-wrap{grid-template-columns:1fr;}
   .eios-inner{grid-template-columns:1fr;gap:32px;}
-  .prog-grid-asym{grid-template-columns:1fr;grid-template-rows:auto;}
+  .prog-grid-asym{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;}
   .prog-big{grid-row:auto;}
   .sved-wrap{grid-template-columns:1fr;}
   .contact-wrap{grid-template-columns:1fr;gap:32px;}
@@ -431,15 +431,16 @@ footer .fcontact b{color:#fff;}
   .prog-grid-asym{gap:14px;}
   .prog-big{padding:22px 20px 18px;}
   .prog-big .prow .price{font-size:22px;}
-  /* Валерия — на всю ширину, вплотную к контенту */
+  /* Эллина — на всю ширину, по пояс */
   .speaker-photo{
     position:static !important;
     display:block;
     width:100%;
     max-width:420px;
+    height:340px;
     margin:16px auto 0;
-    object-fit:contain;
-    object-position:bottom center;
+    object-fit:cover;
+    object-position:top center;
     align-self:center;
   }
 }
@@ -742,16 +743,11 @@ footer .fcontact b{color:#fff;}
     </div>
     <div class="teach-grid">
       <article class="teacher fu fu-d1">
-        <div class="ph"><img src="assets/ermakova.webp" alt="Ермакова Эллина" style="object-position:center 10%;"/></div>
+        <div class="ph"><img src="assets/ermakova.webp?v=2" alt="Ермакова Эллина" style="object-position:center 35%;"/></div>
         <div class="tbody">
           <div class="tname">Ермакова Эллина</div>
           <div class="trole">Генеральный директор стоматологической клиники «Эстетика Дентал»</div>
           <p class="tbio">Эксперт по построению эффективных команд и клиентского сервиса в медицине.</p>
-          <div style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:var(--or-soft);border:1px solid #FECBA0;border-radius:999px;padding:5px 12px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span style="font-size:12px;font-weight:700;color:var(--or1);">Яндекс Карты — рейтинг клиники 5.0</span>
-            <span style="font-size:13px;color:#F59E0B;letter-spacing:1px;">★★★★★</span>
-          </div>
         </div>
       </article>
       <article class="teacher fu fu-d2">
