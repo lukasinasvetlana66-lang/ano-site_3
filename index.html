@@ -409,7 +409,12 @@ footer .fcontact b{color:#fff;}
 @media(max-width:1040px){
   .prog-s.t{grid-column:1;grid-row:auto;min-height:auto;}
   .prog-s.b{grid-column:1;grid-row:auto;}
-  .speaker-photo{width:280px;right:-10px;}
+  /* заголовок и описание — на всю ширину карточки */
+  .prog-s.t .ptag,.prog-s.t h3,.prog-s.t .pdesc{max-width:100%;}
+  /* чипы и цена остаются слева, не заходят под фото */
+  .prog-s.t .pmeta,.prog-s.t .prow{max-width:calc(100% - 260px);}
+  /* Эллина ниже — голова начинается под текстом */
+  .speaker-photo{width:280px;right:-10px;bottom:-170px;}
 }
 @media(max-width:720px){
   .prog-s.t{padding:26px 22px 0;}
