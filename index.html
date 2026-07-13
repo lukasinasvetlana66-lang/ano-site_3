@@ -179,7 +179,7 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 .prog-s.t .prow{border-top:none;margin-top:22px;padding-top:0;justify-content:flex-start;gap:24px;}
 .prog-s.t .price{font-size:30px;color:var(--or1);}
 .prog-s.t .price small{display:block;font-size:11px;font-weight:600;color:var(--muted);}
-.speaker-photo{position:absolute;bottom:-180px;right:0;width:360px;object-fit:contain;object-position:bottom right;z-index:0;pointer-events:none;}
+.speaker-photo{position:absolute;bottom:-300px;right:-20px;width:450px;object-fit:contain;object-position:bottom right;z-index:0;pointer-events:none;}
 .prog-s.t .ptag,.prog-s.t h3,.prog-s.t .pdesc,.prog-s.t .pmeta,.prog-s.t .prow{position:relative;z-index:1;}
 /* заголовок и описание — на всю ширину карточки */
 .prog-s.t .ptag,.prog-s.t h3,.prog-s.t .pdesc{max-width:100%;}
@@ -188,7 +188,7 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 .prog-s.t .pdesc{text-align:justify;hyphens:auto;flex-grow:0;}
 .prog-s.t .price{white-space:nowrap;}
 .prog-s.t .prow{flex-wrap:wrap;}
-.heart-inline{display:block;width:150px;margin:auto 0;padding:12px 0;transform:rotate(8deg);position:relative;z-index:1;pointer-events:none;}
+.heart-inline{display:block;width:210px;margin:auto 0;padding:12px 0;transform:rotate(8deg);position:relative;z-index:1;pointer-events:none;}
 
 /* ── ABOUT ───────────────────────── */
 .about-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:stretch;}
@@ -418,7 +418,8 @@ footer .fcontact b{color:#fff;}
   /* чипы и цена остаются слева, не заходят под фото */
   .prog-s.t .pmeta,.prog-s.t .prow{max-width:calc(100% - 260px);}
   /* Эллина ниже — голова начинается под текстом */
-  .speaker-photo{width:280px;right:-10px;bottom:-170px;}
+  .speaker-photo{width:380px;right:-15px;bottom:-290px;}
+  .heart-inline{width:180px;}
 }
 @media(max-width:720px){
   .prog-s.t{padding:26px 22px 0;}
