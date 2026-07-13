@@ -181,6 +181,10 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 .prog-s.t .price small{display:block;font-size:11px;font-weight:600;color:var(--muted);}
 .speaker-photo{position:absolute;bottom:0;right:0;width:360px;object-fit:contain;object-position:bottom right;z-index:0;pointer-events:none;}
 .prog-s.t .ptag,.prog-s.t h3,.prog-s.t .pdesc,.prog-s.t .pmeta,.prog-s.t .prow{position:relative;z-index:1;max-width:calc(100% - 300px);}
+.prog-s.t .pdesc{text-align:justify;hyphens:auto;flex-grow:0;}
+.prog-s.t .price{white-space:nowrap;}
+.prog-s.t .prow{flex-wrap:wrap;}
+.heart-inline{display:block;width:150px;margin:auto 0;padding:12px 0;transform:rotate(8deg);position:relative;z-index:1;pointer-events:none;}
 
 /* ── ABOUT ───────────────────────── */
 .about-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:stretch;}
@@ -412,17 +416,8 @@ footer .fcontact b{color:#fff;}
   .prog-s.t .pdesc{flex-grow:0;}
   .prog-s.t .prow{margin-top:16px;}
   .prog-s.t .price{font-size:24px;}
-  /* сердце — маленькое, верхний правый угол карточки */
-  .prog-s.t > img[src*="heart"]{
-    display:block !important;
-    position:absolute !important;
-    width:70px !important;
-    top:20px !important;
-    right:16px !important;
-    bottom:auto !important;
-    left:auto !important;
-    opacity:.9;
-  }
+  /* сердце — между текстом и чипами, меньше */
+  .heart-inline{width:100px;padding:8px 0;margin:0;}
   .prog-grid-asym{gap:14px;}
   .prog-big{padding:22px 20px 18px;}
   .prog-big .prow .price{font-size:22px;}
@@ -637,6 +632,7 @@ footer .fcontact b{color:#fff;}
         <span class="ptag">Руководитель</span>
         <h3>Управление пациентским опытом и развитие клиники</h3>
         <p class="pdesc">CJM, инновации в сервис, создание эффективной команды администраторов. Лидеры клиник, которые хотят вывести сервис на новый уровень и выстроить культуру заботы о пациентах.</p>
+        <img src="assets/heart.png?v=2" alt="" aria-hidden="true" class="heart-inline">
         <div class="pmeta">
           <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>144 акад. часа</span>
           <span>1 месяц</span>
@@ -646,7 +642,6 @@ footer .fcontact b{color:#fff;}
           <div class="price">14 900 ₽<small>за весь курс</small></div>
           <button class="btn btn-or btn-sm" onclick="prefill('Управление пациентским опытом и развитие клиники')">Записаться</button>
         </div>
-        <img src="assets/heart.png?v=2" alt="" aria-hidden="true" style="position:absolute;width:130px;top:28px;right:28px;transform:rotate(10deg);opacity:.9;z-index:0;pointer-events:none;">
         <img src="assets/ellina-nobg.png" alt="" aria-hidden="true" class="speaker-photo">
       </article>
 
