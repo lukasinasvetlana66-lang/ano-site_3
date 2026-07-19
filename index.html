@@ -63,8 +63,7 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32"/>
 <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-<link rel="preload" as="image" href="assets/hero-poster.webp" fetchpriority="high"/>
-<link rel="preload" as="video" href="assets/hero-bg-web2.mp4" type="video/mp4"/>
+<link rel="preload" as="video" href="assets/hero-bird.mp4" type="video/mp4"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -101,7 +100,7 @@
   --r-lg:20px;
   --r-md:14px;
   --maxw:1200px;
-  --nav-h:74px;
+  --nav-h:64px;
   --sh-sm:0 2px 8px rgba(15,23,42,.06);
   --sh:0 12px 40px -10px rgba(15,23,42,.12);
   --sh-lg:0 24px 60px -16px rgba(15,23,42,.2);
@@ -117,7 +116,7 @@ img{display:block;max-width:100%;}
 
 /* ── ANIMATIONS ─────────────────── */
 .fu{opacity:0;transform:translateY(32px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);}
-.fu.on{opacity:1;transform:translateY(0);}
+.fu.on{opacity:1;transform:none;}
 .fu-d1{transition-delay:.1s;}
 .fu-d2{transition-delay:.2s;}
 .fu-d3{transition-delay:.3s;}
@@ -158,30 +157,37 @@ img{display:block;max-width:100%;}
 .btn-sm{padding:10px 20px;font-size:14px;}
 
 /* ── HEADER ──────────────────────── */
-header.site{position:fixed;top:0;left:0;right:0;z-index:60;background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s,box-shadow .3s;}
+header.site{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(248,250,252,.92);backdrop-filter:blur(18px) saturate(160%);border-bottom:1px solid transparent;transition:background .3s,border-color .3s,box-shadow .3s;}
+header.site.scrolled .nav{height:56px;}
+header.site.scrolled .brand img{height:32px;}
 header.site.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(18px) saturate(160%);border-color:var(--line);box-shadow:0 2px 18px rgba(0,0,0,.07);}
-.nav{display:flex;align-items:center;gap:14px;height:var(--nav-h);}
-.brand img{height:46px;width:auto;transition:filter .3s;}
+.nav{display:flex;align-items:center;gap:14px;height:var(--nav-h);transition:height .25s;}
+.brand img{height:36px;width:auto;transition:filter .3s,height .25s;}
 /* белый логотип на прозрачном хедере */
-header.site:not(.scrolled) .brand img{filter:brightness(0) invert(1);}
 .nav-links{display:flex;align-items:center;gap:1px;margin-left:8px;}
-.nav-links a{font-size:13.5px;font-weight:600;color:var(--ink-soft);padding:8px 11px;border-radius:9px;transition:color .15s,background .15s;white-space:nowrap;}
+.nav-links a{font-size:14px;font-weight:600;color:var(--ink-soft);padding:7px 10px;border-radius:9px;transition:color .15s,background .15s;white-space:nowrap;}
 /* белые ссылки на прозрачном хедере */
-header.site:not(.scrolled) .nav-links a{color:rgba(255,255,255,.85);}
-header.site:not(.scrolled) .nav-links a:hover{color:#fff;background:rgba(255,255,255,.12);}
-header.site:not(.scrolled) .nav-phone{color:#fff;border-color:rgba(255,255,255,.4);}
-header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 .nav-links a:hover,.nav-links a.active{color:var(--or1);background:var(--or-soft);}
 .nav-right{margin-left:auto;display:flex;align-items:center;gap:11px;}
 .nav-pill{font-size:14px;font-weight:700;color:var(--ink-soft);display:flex;align-items:center;gap:7px;}
 .burger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:#fff;cursor:pointer;align-items:center;justify-content:center;}
 .burger svg{width:20px;height:20px;}
-.nav-phone{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:700;color:var(--ink);padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);transition:color .15s,border-color .15s,background .15s;white-space:nowrap;}
+.nav-phone{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--ink);padding:6px 10px;border-radius:999px;border:1.5px solid transparent;transition:color .15s,border-color .15s,background .15s;white-space:nowrap;}
 .nav-phone:hover{color:var(--or1);border-color:var(--or1);background:var(--or-soft);}
 .nav-phone svg{flex-shrink:0;color:var(--or1);}
 
 /* ── HERO ────────────────────────── */
-.hero{position:relative;min-height:90vh;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;}
+.hero{position:relative;min-height:0;display:flex;align-items:center;overflow:hidden;padding:calc(var(--nav-h) + 44px) 0 56px;background:linear-gradient(180deg,#DEEDFA 0%,#F4F1E8 55%,#F8FAFC 100%);}
+/* мягкие цветовые пятна в фирменных цветах */
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(52% 44% at 76% 58%,rgba(255,138,61,.22) 0%,rgba(255,138,61,0) 72%),radial-gradient(44% 36% at 22% 88%,rgba(255,177,102,.18) 0%,rgba(255,177,102,0) 70%),radial-gradient(38% 32% at 14% 18%,rgba(16,185,129,.08) 0%,rgba(16,185,129,0) 70%),radial-gradient(50% 42% at 50% 6%,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 75%);}
+.hero-grid{display:grid;grid-template-columns:1.02fr 1fr;align-items:center;gap:28px;width:100%;}
+.hero-copy{text-align:left;}
+.hero .hero-copy h1{font-size:clamp(29px,2.85vw,42px);font-weight:900;letter-spacing:-.02em;line-height:1.14;color:var(--ink);max-width:100%;}
+.hero .hero-copy .hero-lead{color:var(--ink-soft);margin-left:0;max-width:480px;}
+.hero .hero-copy .hero-cta{justify-content:flex-start;}
+.hero .hero-copy .hero-cta .btn-ghost{color:var(--ink);border-color:rgba(15,23,42,.25);background:rgba(255,255,255,.55);}
+.hero .hero-copy .hero-cta .btn-ghost:hover{border-color:var(--ink);color:var(--ink);background:rgba(255,255,255,.8);}
+.hero-bird{width:122%;max-width:none;mix-blend-mode:multiply;pointer-events:none;justify-self:center;margin:0 10px 0 -16%;transform:rotate(4deg) translate(38px,-30px);}
 .hero-video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,11,28,.28) 0%,rgba(6,11,28,.22) 40%,rgba(6,11,28,.22) 65%,rgba(6,11,28,.55) 100%);z-index:1;}
 .hero-inner{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding:calc(var(--nav-h) + 30px) 0 50px;}
@@ -193,6 +199,14 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 /* ghost кнопка читаемая на тёмном видео */
 .hero-cta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.08);}
 .hero-cta .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.18);color:#fff;}
+
+/* — Текстовый блок под видео — */
+.hero-intro{background:var(--bg);padding:48px 0 10px;text-align:center;}
+.hero-intro .hero-content{margin:0 auto;}
+.hero-intro h1{font-size:clamp(34px,4.5vw,56px);font-weight:900;letter-spacing:-.03em;line-height:1.1;color:var(--ink);}
+.hero-intro .hero-lead{color:var(--ink-soft);}
+.hero-intro .hero-cta .btn-ghost{color:var(--ink);border-color:var(--line);background:#fff;}
+.hero-intro .hero-cta .btn-ghost:hover{border-color:var(--ink);color:var(--ink);background:#fff;}
 .scroll-hint{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;padding-bottom:28px;color:rgba(255,255,255,.45);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
 .scroll-hint svg{animation:scrollBounce 2.2s ease-in-out infinite;}
 @keyframes scrollBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
@@ -246,11 +260,13 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 /* заголовок и описание — на всю ширину карточки */
 .prog-s.t .ptag,.prog-s.t h3,.prog-s.t .pdesc{max-width:100%;}
 /* чипы и цена — слева, не под фото */
-.prog-s.t .pmeta,.prog-s.t .prow{max-width:calc(100% - 300px);}
+.prog-s.t .prow{max-width:calc(100% - 300px);}
+.prog-s.t .pmeta{max-width:calc(100% - 210px);flex-wrap:nowrap;}
+.prog-s.t .pmeta span{white-space:nowrap;}
 .prog-s.t .pdesc{text-align:justify;hyphens:auto;flex-grow:0;}
 .prog-s.t .price{white-space:nowrap;}
 .prog-s.t .prow{flex-wrap:wrap;}
-.heart-inline{display:block;width:210px;margin:auto 0;padding:12px 0;transform:rotate(8deg);position:relative;z-index:1;pointer-events:none;}
+.team-heart{display:block;width:360px;margin:0 0 -20px;transform:rotate(-8deg);pointer-events:none;mix-blend-mode:multiply;}
 
 /* ── ABOUT ───────────────────────── */
 .about-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:stretch;}
@@ -280,6 +296,8 @@ header.site:not(.scrolled) .nav-phone:hover{background:rgba(255,255,255,.15);}
 .efeat p{margin-top:5px;font-size:13px;color:rgba(255,255,255,.72);line-height:1.5;}
 
 /* ── TEAM SHUFFLE GRID ──────────── */
+#team{padding-top:8px;}
+#teachers{padding-bottom:48px;}
 .team-layout{display:grid;grid-template-columns:1fr 1.35fr;gap:60px;align-items:center;}
 .team-shuffle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .team-cell{aspect-ratio:1;overflow:hidden;border-radius:12px;background:var(--subtle);}
@@ -432,7 +450,14 @@ footer .fcontact b{color:#fff;}
   .eios-inner{padding:38px 26px;}
   .foot-grid{grid-template-columns:1fr 1fr;gap:26px;}
   .prog-s .pmeta{display:none;}
-  .hero{padding:46px 0 60px;}
+  .hero{min-height:0;padding:calc(var(--nav-h) + 28px) 0 36px;}
+  .hero-grid{grid-template-columns:1fr;gap:0;}
+  /* порядок: заголовок -> птица (в небе) -> текст -> кнопки */
+  .hero-copy{display:contents;}
+  .hero .hero-copy h1{order:1;text-align:center;}
+  .hero-bird{order:2;max-width:390px;justify-self:center;margin:6px 0 2px;}
+  .hero .hero-copy .hero-lead{order:3;text-align:center;margin:0 auto;}
+  .hero .hero-copy .hero-cta{order:4;justify-content:center;margin-top:18px;}
   .hero-inner{gap:30px;}
   .hero h1{font-size:clamp(34px,10vw,42px);}
   .hero-cta .btn{width:100%;}
@@ -460,7 +485,6 @@ footer .fcontact b{color:#fff;}
 
 /* — Hero — */
 @media(max-width:720px){
-  .hero{min-height:80vh;max-height:none;}
   .hero-inner{padding:calc(var(--nav-h) + 140px) 20px 80px;}
   .hero h1{font-size:clamp(28px,8vw,38px);}
   .hero-lead{font-size:15px;margin-top:20px;}
@@ -478,10 +502,11 @@ footer .fcontact b{color:#fff;}
   /* заголовок и описание — на всю ширину карточки */
   .prog-s.t .ptag,.prog-s.t h3,.prog-s.t .pdesc{max-width:100%;}
   /* чипы и цена остаются слева, не заходят под фото */
-  .prog-s.t .pmeta,.prog-s.t .prow{max-width:calc(100% - 260px);}
+  .prog-s.t .prow{max-width:calc(100% - 260px);}
+  .prog-s.t .pmeta{max-width:calc(100% - 180px);}
   /* Эллина ниже — голова начинается под текстом */
   .speaker-photo{width:500px;right:-70px;bottom:-330px;}
-  .heart-inline{width:180px;}
+  .team-heart{width:190px;margin-bottom:14px;}
 }
 @media(max-width:720px){
   .prog-s.t{padding:26px 22px 0;}
@@ -489,7 +514,7 @@ footer .fcontact b{color:#fff;}
   .prog-s.t .prow{margin-top:16px;}
   .prog-s.t .price{font-size:24px;}
   /* сердце — справа, цена поднимается на его уровень */
-  .heart-inline{width:150px;padding:0;margin:4px 10px -150px auto;}
+  .team-heart{width:160px;margin-bottom:12px;}
   .prog-grid-asym{gap:14px;}
   .prog-big{padding:22px 20px 18px;}
   .prog-big .prow .price{font-size:22px;}
@@ -570,7 +595,7 @@ footer .fcontact b{color:#fff;}
 
 /* — Contact — */
 @media(max-width:720px){
-  .contact-wrap > .fu.fu-d1 > img[src*="elephant"]{max-width:240px;}
+  .contact-wrap video{max-width:240px;}
   .cc-list{max-width:100%;}
 }
 
@@ -636,22 +661,19 @@ footer .fcontact b{color:#fff;}
 
 <!-- ═══ HERO ══════════════════════════ -->
 <section class="hero">
-  <video class="hero-video-bg" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.webp">
-    <source src="assets/hero-bg-web2.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay" aria-hidden="true"></div>
-
-  <div class="wrap hero-inner">
-    <div class="hero-content fu">
+  <div class="wrap hero-grid">
+    <div class="hero-copy fu">
       <h1>Раскройте <span class="gr-or">энергию заботы</span> и&nbsp;<span class="gr-em">творчества</span> в&nbsp;медицинском сервисе</h1>
-      <p class="hero-lead">Обучаем команды клиник создавать исключительный сервис. Практикующие эксперты, дистанционный формат, документ установленного образца.</p>
+      <p class="hero-lead">Обучаем команды клиник создавать исключительный сервис. Дистанционно, с удостоверением установленного образца.</p>
       <div class="hero-cta">
         <a href="#programs" class="btn btn-or">Выбрать программу</a>
         <a href="#about" class="btn btn-ghost">Об организации</a>
       </div>
     </div>
+    <video class="hero-bird" autoplay muted loop playsinline preload="auto" poster="assets/hero-bird-poster.webp" aria-hidden="true">
+      <source src="assets/hero-bird.mp4" type="video/mp4">
+    </video>
   </div>
-
 </section>
 
 <!-- ═══ PROGRAMS ══════════════════════ -->
@@ -705,7 +727,6 @@ footer .fcontact b{color:#fff;}
         <span class="ptag">Руководитель</span>
         <h3>Управление пациентским опытом и развитие клиники</h3>
         <p class="pdesc">CJM, инновации в сервис, создание эффективной команды администраторов. Лидеры клиник, которые хотят вывести сервис на новый уровень и выстроить культуру заботы о пациентах.</p>
-        <img loading="lazy" decoding="async" src="assets/heart.webp" alt="" aria-hidden="true" class="heart-inline">
         <div class="pmeta">
           <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>144 акад. часа</span>
           <span>1 месяц</span>
@@ -724,7 +745,9 @@ footer .fcontact b{color:#fff;}
 
 <!-- ═══ ABOUT ══════════════════════════ -->
 <section id="about" class="about-section" style="position:relative;overflow:visible;padding-top:480px;">
-  <img loading="lazy" decoding="async" src="assets/origami-flower2.webp" alt="" aria-hidden="true" class="about-flower" style="position:absolute;width:320px;top:60px;left:max(8px,calc(50% - 580px));transform:rotate(-12deg);opacity:.9;z-index:2;pointer-events:none;mix-blend-mode:multiply;">
+  <video autoplay muted loop playsinline preload="none" poster="assets/flower-poster.webp" aria-hidden="true" class="about-flower" style="position:absolute;width:320px;top:60px;left:max(8px,calc(50% - 580px));transform:rotate(-12deg);opacity:.9;z-index:2;pointer-events:none;mix-blend-mode:multiply;">
+    <source src="assets/flower.mp4" type="video/mp4">
+  </video>
   <div class="about-heading-overlay" style="position:absolute;top:90px;left:0;right:0;display:flex;justify-content:center;z-index:3;pointer-events:none;">
     <div style="width:100%;max-width:var(--maxw);padding:0 30px;display:flex;align-items:flex-start;">
       <div class="about-heading-spacer" style="width:340px;flex-shrink:0;"></div>
@@ -837,6 +860,9 @@ footer .fcontact b{color:#fff;}
   <div class="wrap">
     <div class="team-layout">
       <div class="team-text fu">
+        <video autoplay muted loop playsinline preload="none" poster="assets/heart-poster.webp" aria-hidden="true" class="team-heart">
+          <source src="assets/heart.mp4" type="video/mp4">
+        </video>
         <h2 style="margin-top:0;font-size:clamp(32px,4vw,52px);line-height:1.08;">Команды,<br><span class="gr-or">влюблённые</span><br><span class="gr-em">в своё дело</span></h2>
         <p style="margin-top:20px;font-size:16px;color:var(--ink-soft);max-width:380px;line-height:1.6;">Мы обучаем людей, которые вовлечены в работу по-настоящему — тех, кто видит в медицинском сервисе призвание, а не просто должность.</p>
       </div>
@@ -1046,7 +1072,8 @@ footer .fcontact b{color:#fff;}
       </div>
 
       <!-- КОНТАКТЫ — справа -->
-      <div class="fu fu-d1">
+      <div>
+        <div class="fu fu-d1">
         <span class="eyebrow ey-or">Контакты</span>
         <h2>Раскройте свою энергию и творчество в&nbsp;сервисе!</h2>
         <p class="lead">Заполните форму, и мы свяжемся с вами для консультации и оформления документов.</p>
@@ -1064,7 +1091,11 @@ footer .fcontact b{color:#fff;}
             <div><div class="lab">Адрес</div><div class="val">г. Москва, ул. Бакинская, д. 15</div></div>
           </div>
         </div>
-        <img loading="lazy" decoding="async" src="assets/origami/elephant-green.webp" alt="" aria-hidden="true" style="display:block;width:100%;max-width:340px;margin-top:24px;pointer-events:none;">
+        </div>
+        <video autoplay muted loop playsinline preload="none" aria-hidden="true" style="display:block;width:100%;max-width:340px;margin-top:-40px;pointer-events:none;">
+          <source src="assets/elephant.mov" type="video/mp4;codecs=hvc1">
+          <source src="assets/elephant.webm" type="video/webm">
+        </video>
       </div>
 
     </div>
