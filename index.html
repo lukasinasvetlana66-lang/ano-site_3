@@ -106,7 +106,7 @@
   --sh-lg:0 24px 60px -16px rgba(15,23,42,.2);
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;scroll-padding-top:88px;}
+html{scroll-behavior:smooth;scroll-padding-top:88px;overflow-x:hidden;}
 body{margin:0;font-family:'Montserrat',system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 h1,h2,h3,h4{margin:0;line-height:1.08;font-weight:800;letter-spacing:-.02em;}
 p{margin:0;}
@@ -179,7 +179,7 @@ header.site.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(18px)
 /* ── HERO ────────────────────────── */
 .hero{position:relative;min-height:0;display:flex;align-items:center;overflow:hidden;padding:calc(var(--nav-h) + 44px) 0 56px;background:linear-gradient(180deg,#DEEDFA 0%,#F4F1E8 55%,#F8FAFC 100%);}
 /* мягкие цветовые пятна в фирменных цветах */
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(52% 44% at 76% 58%,rgba(255,138,61,.22) 0%,rgba(255,138,61,0) 72%),radial-gradient(44% 36% at 22% 88%,rgba(255,177,102,.18) 0%,rgba(255,177,102,0) 70%),radial-gradient(38% 32% at 14% 18%,rgba(16,185,129,.08) 0%,rgba(16,185,129,0) 70%),radial-gradient(50% 42% at 50% 6%,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 75%);}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(52% 44% at 76% 58%,rgba(255,138,61,.22) 0%,rgba(255,138,61,0) 72%),radial-gradient(44% 36% at 22% 88%,rgba(255,177,102,.18) 0%,rgba(255,177,102,0) 70%),radial-gradient(38% 32% at 14% 18%,rgba(16,185,129,.08) 0%,rgba(16,185,129,0) 70%);}
 .hero-grid{display:grid;grid-template-columns:1.02fr 1fr;align-items:center;gap:28px;width:100%;}
 .hero-copy{text-align:left;}
 .hero .hero-copy h1{font-size:clamp(29px,2.85vw,42px);font-weight:900;letter-spacing:-.02em;line-height:1.14;color:var(--ink);max-width:100%;}
@@ -417,7 +417,7 @@ footer .fcontact b{color:#fff;}
 .foot-bot{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12px;}
 
 /* ── MOBILE NAV ──────────────────── */
-.mm{position:fixed;inset:0;z-index:80;background:rgba(15,23,42,.5);opacity:0;visibility:hidden;transition:opacity .25s;}
+.mm{position:fixed;inset:0;z-index:80;background:rgba(15,23,42,.5);opacity:0;visibility:hidden;transition:opacity .25s;overflow:hidden;}
 .mm.open{opacity:1;visibility:visible;}
 .mm-panel{position:absolute;top:0;right:0;width:min(340px,88vw);height:100%;background:#fff;padding:22px;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column;gap:4px;overflow-y:auto;}
 .mm.open .mm-panel{transform:translateX(0);}
@@ -455,7 +455,7 @@ footer .fcontact b{color:#fff;}
   /* порядок: заголовок -> птица (в небе) -> текст -> кнопки */
   .hero-copy{display:contents;}
   .hero .hero-copy h1{order:1;text-align:center;}
-  .hero-bird{order:2;max-width:390px;justify-self:center;margin:6px 0 2px;}
+  .hero-bird{order:2;width:80%;max-width:260px;justify-self:center;margin:26px 0 30px;}
   .hero .hero-copy .hero-lead{order:3;text-align:center;margin:0 auto;}
   .hero .hero-copy .hero-cta{order:4;justify-content:center;margin-top:18px;}
   .hero-inner{gap:30px;}
@@ -506,7 +506,7 @@ footer .fcontact b{color:#fff;}
   .prog-s.t .pmeta{max-width:calc(100% - 180px);}
   /* Эллина ниже — голова начинается под текстом */
   .speaker-photo{width:500px;right:-70px;bottom:-330px;}
-  .team-heart{width:190px;margin-bottom:14px;}
+  .team-heart{width:260px;margin-bottom:10px;}
 }
 @media(max-width:720px){
   .prog-s.t{padding:26px 22px 0;}
@@ -514,7 +514,7 @@ footer .fcontact b{color:#fff;}
   .prog-s.t .prow{margin-top:16px;}
   .prog-s.t .price{font-size:24px;}
   /* сердце — справа, цена поднимается на его уровень */
-  .team-heart{width:160px;margin-bottom:12px;}
+  .team-heart{width:220px;margin-bottom:8px;}
   .prog-grid-asym{gap:14px;}
   .prog-big{padding:22px 20px 18px;}
   .prog-big .prow .price{font-size:22px;}
@@ -595,7 +595,7 @@ footer .fcontact b{color:#fff;}
 
 /* — Contact — */
 @media(max-width:720px){
-  .contact-wrap video{max-width:240px;}
+  .contact-wrap video{max-width:240px;margin-top:0 !important;}
   .cc-list{max-width:100%;}
 }
 
@@ -745,7 +745,7 @@ footer .fcontact b{color:#fff;}
 
 <!-- ═══ ABOUT ══════════════════════════ -->
 <section id="about" class="about-section" style="position:relative;overflow:visible;padding-top:480px;">
-  <video autoplay muted loop playsinline preload="none" poster="assets/flower-poster.webp" aria-hidden="true" class="about-flower" style="position:absolute;width:320px;top:60px;left:max(8px,calc(50% - 580px));transform:rotate(-12deg);opacity:.9;z-index:2;pointer-events:none;mix-blend-mode:multiply;">
+  <video autoplay muted loop playsinline preload="auto" poster="assets/flower-poster.webp" aria-hidden="true" class="about-flower" style="position:absolute;width:320px;top:60px;left:max(8px,calc(50% - 580px));transform:rotate(-12deg);opacity:.9;z-index:2;pointer-events:none;mix-blend-mode:multiply;">
     <source src="assets/flower.mp4" type="video/mp4">
   </video>
   <div class="about-heading-overlay" style="position:absolute;top:90px;left:0;right:0;display:flex;justify-content:center;z-index:3;pointer-events:none;">
@@ -860,7 +860,7 @@ footer .fcontact b{color:#fff;}
   <div class="wrap">
     <div class="team-layout">
       <div class="team-text fu">
-        <video autoplay muted loop playsinline preload="none" poster="assets/heart-poster.webp" aria-hidden="true" class="team-heart">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/heart-poster.webp" aria-hidden="true" class="team-heart">
           <source src="assets/heart.mp4" type="video/mp4">
         </video>
         <h2 style="margin-top:0;font-size:clamp(32px,4vw,52px);line-height:1.08;">Команды,<br><span class="gr-or">влюблённые</span><br><span class="gr-em">в своё дело</span></h2>
@@ -1092,7 +1092,7 @@ footer .fcontact b{color:#fff;}
           </div>
         </div>
         </div>
-        <video autoplay muted loop playsinline preload="none" aria-hidden="true" style="display:block;width:100%;max-width:340px;margin-top:-40px;pointer-events:none;">
+        <video autoplay muted loop playsinline preload="auto" aria-hidden="true" style="display:block;width:100%;max-width:340px;margin-top:-40px;pointer-events:none;">
           <source src="assets/elephant.mov" type="video/mp4;codecs=hvc1">
           <source src="assets/elephant.webm" type="video/webm">
         </video>
@@ -1202,6 +1202,21 @@ footer .fcontact b{color:#fff;}
 
 <script>
 (function(){
+  // Force-play decorative videos (some mobile browsers show a play button
+  // instead of autoplaying when preload/decoding is slow)
+  function forcePlayVideos(){
+    document.querySelectorAll('video[autoplay]').forEach(function(v){
+      v.muted=true;
+      var p=v.play();
+      if(p&&p.catch)p.catch(function(){});
+    });
+  }
+  forcePlayVideos();
+  document.addEventListener('DOMContentLoaded',forcePlayVideos);
+  ['touchstart','scroll','click'].forEach(function(evt){
+    document.addEventListener(evt,forcePlayVideos,{once:true,passive:true});
+  });
+
   // Header scroll
   var hdr=document.querySelector('header.site');
   function hs(){hdr.classList.toggle('scrolled',window.scrollY>8);}
